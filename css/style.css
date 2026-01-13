@@ -257,6 +257,7 @@ h3 { font-size: 1.25rem; }
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
     animation: modalSlideIn 0.3s ease;
+    box-sizing: border-box;
 }
 
 @keyframes modalSlideIn {
