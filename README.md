@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Advocate Assist - Case Management System
 
 A complete, workable legal case management helper application for advocates in India. This system helps advocates manage multiple cases, track hearing dates, maintain case history, and receive automated notifications for upcoming hearings.
@@ -282,3 +283,6 @@ This project is provided as-is for demonstration purposes.
 
 **Note**: This application is designed to help advocates manage their cases more efficiently. Always verify important case information independently and use this as a supplementary tool, not a replacement for proper case management practices.
 
+=======
+# advocates-assist
+>>>>>>> e3b860fe62aef4554f36d1af19ddfebf1c6015ad
