@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Assist - Case Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header-actions">
+                <a href="cases.html" class="btn btn-secondary">Back to Cases</a>
+                <button class="icon-btn notification-btn" id="notificationsBtn" aria-label="Notifications">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="badge" id="notificationBadge">0</span>
+                </button>
+                <div class="profile-dropdown">
+                    <button class="icon-btn profile-btn" id="profileBtn" aria-label="Profile">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" id="profileDropdown">
+                        <a href="#" id="settingsLink" class="dropdown-item">
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.78 1.31a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 1 1.73v.44a2 2 0 0 1-1 1.73l-.15.08a2 2 0 0 0-.73 2.73l.78 1.31a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 1 1.73v.44a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.78-1.31a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                            </svg>
+                            Settings
+                        </a>
+                        <button id="logoutBtnDropdown" class="dropdown-item">
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Advocate Assist</h2>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="cases.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Cases</span>
+            </a>
+            <a href="ai-chat.html" class="nav-item" id="aiChatLink">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <path d="M13 8H7"></path>
+                    <path d="M17 12H7"></path>
+                </svg>
+                <span>AI Chat</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info-mobile" id="userInfoMobile"></div>
+        </div>
+    </aside>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="case-detail-container">
+        <div id="caseDetailContent" class="case-detail-content">
+            <div class="loading">Loading case details...</div>
+        </div>
+    </div>
+    
+    <!-- Edit Case Modal -->
+    <div id="caseModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Edit Case</h2>
+                <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="caseForm" class="case-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="caseNumberDetail">Case Number *</label>
+                        <input type="text" id="caseNumberDetail" name="caseNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="caseTitleDetail">Case Title *</label>
+                        <input type="text" id="caseTitleDetail" name="caseTitle" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="clientNameDetail">Client Name *</label>
+                        <input type="text" id="clientNameDetail" name="clientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="caseTypeDetail">Case Type *</label>
+                        <select id="caseTypeDetail" name="caseType" required>
+                            <option value="">Select Case Type</option>
+                            <option value="Criminal">Criminal</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Family">Family</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Property">Property</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="courtNameDetail">Court Name *</label>
+                        <input type="text" id="courtNameDetail" name="courtName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="judgeNameDetail">Judge Name</label>
+                        <input type="text" id="judgeNameDetail" name="judgeName">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ipcSectionDetail">IPC Section</label>
+                        <input type="text" id="ipcSectionDetail" name="ipcSection" placeholder="e.g., IPC 302">
+                    </div>
+                    <div class="form-group">
+                        <label for="bnsSectionDetail">BNS Section</label>
+                        <input type="text" id="bnsSectionDetail" name="bnsSection" placeholder="e.g., BNS 101">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="statusDetail">Status *</label>
+                        <select id="statusDetail" name="status" required>
+                            <option value="active">Active</option>
+                            <option value="postponed">Postponed</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nextHearingDateDetail">Next Hearing Date</label>
+                        <input type="date" id="nextHearingDateDetail" name="nextHearingDate">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nextHearingTimeDetail">Next Hearing Time</label>
+                    <input type="time" id="nextHearingTimeDetail" name="nextHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="descriptionDetail">Case Description</label>
+                    <textarea id="descriptionDetail" name="description" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="caseFilesDetail">Upload Documents (optional)</label>
+                    <input type="file" id="caseFilesDetail" name="caseFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt">
+                    <small>You can select multiple files. Max 10MB per file.</small>
+                    <div id="caseFilesListDetail" class="file-list"></div>
+                </div>
+                
+                <input type="hidden" id="caseIdDetail" name="caseId">
+                
+                <div id="caseFormErrorDetail" class="error-message" role="alert"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelCaseBtnDetail">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Update Next Hearing Modal -->
+    <div id="updateHearingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Update Next Hearing</h2>
+                <button class="modal-close" id="closeUpdateHearingModal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="updateHearingForm" class="case-form">
+                <div class="form-group">
+                    <label for="updateHearingDate">Next Hearing Date *</label>
+                    <input type="date" id="updateHearingDate" name="updateHearingDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="updateHearingTime">Hearing Time</label>
+                    <input type="time" id="updateHearingTime" name="updateHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="updateHearingNotes">Hearing Notes / Preparation Instructions *</label>
+                    <textarea id="updateHearingNotes" name="updateHearingNotes" rows="4" required placeholder="Add important information about this hearing, preparation notes, documents to bring, arguments to present, etc."></textarea>
+                    <small>This information will be saved with the hearing date</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="updateHearingPurpose">Purpose of Hearing</label>
+                    <select id="updateHearingPurpose" name="updateHearingPurpose">
+                        <option value="">Select Purpose</option>
+                        <option value="Arguments">Arguments</option>
+                        <option value="Evidence">Evidence</option>
+                        <option value="Order">Order</option>
+                        <option value="Judgment">Judgment</option>
+                        <option value="Appearance">Appearance</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div id="updateHearingError" class="error-message" role="alert"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelUpdateHearingBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Hearing Date</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Edit History Entry Modal -->
+    <div id="editHistoryModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit History Entry</h2>
+                <button class="modal-close" id="closeEditHistoryModal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="editHistoryForm" class="case-form">
+                <div class="form-group">
+                    <label for="editHistoryDate">Event Date *</label>
+                    <input type="date" id="editHistoryDate" name="editHistoryDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryEvent">Event Type *</label>
+                    <select id="editHistoryEvent" name="editHistoryEvent" required>
+                        <option value="">Select Event Type</option>
+                        <option value="Hearing">Hearing</option>
+                        <option value="Filing">Filing</option>
+                        <option value="Order">Order</option>
+                        <option value="Postponement">Postponement</option>
+                        <option value="Adjournment">Adjournment</option>
+                        <option value="Judgment">Judgment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryHearingDate">Hearing Date (if applicable)</label>
+                    <input type="date" id="editHistoryHearingDate" name="editHistoryHearingDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryHearingTime">Hearing Time</label>
+                    <input type="time" id="editHistoryHearingTime" name="editHistoryHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryOutcome">Hearing Outcome</label>
+                    <select id="editHistoryOutcome" name="editHistoryOutcome">
+                        <option value="">Select Outcome</option>
+                        <option value="Adjourned">Adjourned</option>
+                        <option value="Order Passed">Order Passed</option>
+                        <option value="Next Date Given">Next Date Given</option>
+                        <option value="Arguments Completed">Arguments Completed</option>
+                        <option value="Judgment Reserved">Judgment Reserved</option>
+                        <option value="Case Disposed">Case Disposed</option>
+                        <option value="Postponed">Postponed</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryDescription">Description / Notes *</label>
+                    <textarea id="editHistoryDescription" name="editHistoryDescription" rows="4" required placeholder="What happened in the hearing? Any important details?"></textarea>
+                </div>
+                
+                <div class="form-group" id="editHistoryFilesGroup">
+                    <label>Existing Files</label>
+                    <div id="editHistoryExistingFiles" class="file-list"></div>
+                    <small>To remove a file, click the X button. To add new files, use the upload below.</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryFiles">Add New Files (optional)</label>
+                    <input type="file" id="editHistoryFiles" name="editHistoryFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt">
+                    <small>You can select multiple files. Max 10MB per file.</small>
+                    <div id="editHistoryFilesList" class="file-list"></div>
+                </div>
+                
+                <div class="form-group" id="editHistoryNextHearingGroup">
+                    <label for="editHistoryNextHearingDate">Next Hearing Date (if scheduled)</label>
+                    <input type="date" id="editHistoryNextHearingDate" name="editHistoryNextHearingDate">
+                    <small>Leave empty if no next hearing was scheduled</small>
+                </div>
+                
+                <div class="form-group" id="editHistoryNextHearingTimeGroup">
+                    <label for="editHistoryNextHearingTime">Next Hearing Time</label>
+                    <input type="time" id="editHistoryNextHearingTime" name="editHistoryNextHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="editHistoryStatus">Update Case Status</label>
+                    <select id="editHistoryStatus" name="editHistoryStatus">
+                        <option value="">No Change</option>
+                        <option value="active">Active</option>
+                        <option value="postponed">Postponed</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+                
+                <div id="editHistoryFormError" class="error-message" role="alert"></div>
+                
+                <input type="hidden" id="editHistoryEntryId" name="editHistoryEntryId">
+                <input type="hidden" id="editHistoryCaseId" name="editHistoryCaseId">
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelEditHistoryBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Add History Entry Modal -->
+    <div id="historyModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add History Entry</h2>
+                <button class="modal-close" id="closeHistoryModal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="historyForm" class="case-form">
+                <div class="form-group">
+                    <label for="historyDate">Event Date *</label>
+                    <input type="date" id="historyDate" name="historyDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyEvent">Event Type *</label>
+                    <select id="historyEvent" name="historyEvent" required>
+                        <option value="">Select Event Type</option>
+                        <option value="Hearing">Hearing</option>
+                        <option value="Filing">Filing</option>
+                        <option value="Order">Order</option>
+                        <option value="Postponement">Postponement</option>
+                        <option value="Adjournment">Adjournment</option>
+                        <option value="Judgment">Judgment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyHearingDate">Hearing Date (if applicable)</label>
+                    <input type="date" id="historyHearingDate" name="historyHearingDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyHearingTime">Hearing Time</label>
+                    <input type="time" id="historyHearingTime" name="historyHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyStatus">Updated Status</label>
+                    <select id="historyStatus" name="historyStatus">
+                        <option value="">No Change</option>
+                        <option value="active">Active</option>
+                        <option value="postponed">Postponed</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyOutcome">Outcome (optional)</label>
+                    <input type="text" id="historyOutcome" name="historyOutcome" placeholder="e.g., Adjourned, Order passed, etc.">
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyNextHearingDate">Next Hearing Date (if scheduled)</label>
+                    <input type="date" id="historyNextHearingDate" name="historyNextHearingDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyNextHearingTime">Next Hearing Time</label>
+                    <input type="time" id="historyNextHearingTime" name="historyNextHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyDescription">Description *</label>
+                    <textarea id="historyDescription" name="historyDescription" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="historyFiles">Upload Documents (optional)</label>
+                    <input type="file" id="historyFiles" name="historyFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt">
+                    <small>You can select multiple files. Max 10MB per file.</small>
+                    <div id="historyFilesList" class="file-list"></div>
+                </div>
+                
+                <div id="historyFormError" class="error-message" role="alert"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelHistoryBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Entry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Complete Hearing Modal -->
+    <div id="completeHearingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete Hearing</h2>
+                <button class="modal-close" id="closeCompleteHearingModal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="completeHearingForm" class="case-form">
+                <div class="form-group">
+                    <label>Current Hearing Date</label>
+                    <input type="text" id="currentHearingDateDisplay" readonly style="background-color: #f1f5f9;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="hearingOutcome">Hearing Outcome *</label>
+                    <select id="hearingOutcome" name="hearingOutcome" required>
+                        <option value="">Select Outcome</option>
+                        <option value="Adjourned">Adjourned</option>
+                        <option value="Order Passed">Order Passed</option>
+                        <option value="Next Date Given">Next Date Given</option>
+                        <option value="Arguments Completed">Arguments Completed</option>
+                        <option value="Judgment Reserved">Judgment Reserved</option>
+                        <option value="Case Disposed">Case Disposed</option>
+                        <option value="Postponed">Postponed</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="completeHearingDescription">Description / Notes *</label>
+                    <textarea id="completeHearingDescription" name="completeHearingDescription" rows="4" required placeholder="What happened in the hearing? Any important details?"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="completeHearingFiles">Upload Documents (PDF, Images, etc.)</label>
+                    <input type="file" id="completeHearingFiles" name="completeHearingFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt">
+                    <small>You can select multiple files. Max 10MB per file.</small>
+                    <div id="completeHearingFilesList" class="file-list"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nextHearingDateAfter">Next Hearing Date (if scheduled)</label>
+                    <input type="date" id="nextHearingDateAfter" name="nextHearingDateAfter">
+                    <small>Leave empty if no next hearing is scheduled</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nextHearingTimeAfter">Next Hearing Time</label>
+                    <input type="time" id="nextHearingTimeAfter" name="nextHearingTimeAfter">
+                </div>
+                
+                <div class="form-group">
+                    <label for="completeHearingStatus">Update Case Status</label>
+                    <select id="completeHearingStatus" name="completeHearingStatus">
+                        <option value="">No Change</option>
+                        <option value="active">Active</option>
+                        <option value="postponed">Postponed</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+                
+                <div id="completeHearingError" class="error-message" role="alert"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelCompleteHearingBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Mark Hearing as Completed</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/alerts.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/cases.js"></script>
+</body>
+</html>
+

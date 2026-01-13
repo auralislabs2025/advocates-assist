@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Assist - Cases</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header-actions">
+                <button class="icon-btn notification-btn" id="notificationsBtn" aria-label="Notifications">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="badge" id="notificationBadge">0</span>
+                </button>
+                <div class="profile-dropdown">
+                    <button class="icon-btn profile-btn" id="profileBtn" aria-label="Profile">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" id="profileDropdown">
+                        <a href="#" id="settingsLink" class="dropdown-item">
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.78 1.31a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 1 1.73v.44a2 2 0 0 1-1 1.73l-.15.08a2 2 0 0 0-.73 2.73l.78 1.31a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 1 1.73v.44a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.78-1.31a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                            </svg>
+                            Settings
+                        </a>
+                        <button id="logoutBtnDropdown" class="dropdown-item">
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Advocate Assist</h2>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="cases.html" class="nav-item active">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Cases</span>
+            </a>
+            <a href="ai-chat.html" class="nav-item" id="aiChatLink">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <path d="M13 8H7"></path>
+                    <path d="M17 12H7"></path>
+                </svg>
+                <span>AI Chat</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info-mobile" id="userInfoMobile"></div>
+        </div>
+    </aside>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="dashboard-container">
+        <main class="main-content">
+            <div class="page-header">
+                <h2>Case Management</h2>
+                <button class="btn btn-primary" id="addCaseBtn">
+                    <span>+</span> Add New Case
+                </button>
+            </div>
+            
+            <div class="toolbar">
+                <div class="search-filter-section">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search by case number, client, or court..."
+                        class="search-input"
+                        aria-label="Search cases"
+                    >
+                    <select id="statusFilter" class="filter-select" aria-label="Filter by status">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="postponed">Postponed</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                    <select id="dateFilter" class="filter-select" aria-label="Filter by date">
+                        <option value="all">All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="week">Next 7 Days</option>
+                        <option value="month">Next 30 Days</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="alertBanner" class="alert-banner hidden" role="alert"></div>
+            
+            <div class="cases-grid" id="casesGrid">
+                <div class="no-cases">
+                    <p>No cases found. Click "Add New Case" to get started.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Add/Edit Case Modal -->
+    <div id="caseModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Case</h2>
+                <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="caseForm" class="case-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="caseNumber">Case Number *</label>
+                        <input type="text" id="caseNumber" name="caseNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="caseTitle">Case Title *</label>
+                        <input type="text" id="caseTitle" name="caseTitle" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="clientName">Client Name *</label>
+                        <input type="text" id="clientName" name="clientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="courtName">Court Name *</label>
+                        <input type="text" id="courtName" name="courtName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="judgeName">Judge Name</label>
+                        <input type="text" id="judgeName" name="judgeName">
+                    </div>
+                    <div class="form-group">
+                        <label for="caseType">Case Type *</label>
+                        <select id="caseType" name="caseType" required>
+                            <option value="">Select Case Type</option>
+                            <option value="Criminal">Criminal</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Family">Family</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Property">Property</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ipcSection">IPC Section</label>
+                        <input type="text" id="ipcSection" name="ipcSection">
+                    </div>
+                    <div class="form-group">
+                        <label for="bnsSection">BNS Section</label>
+                        <input type="text" id="bnsSection" name="bnsSection">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="status">Status *</label>
+                        <select id="status" name="status" required>
+                            <option value="active">Active</option>
+                            <option value="postponed">Postponed</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nextHearingDate">Next Hearing Date *</label>
+                        <input type="date" id="nextHearingDate" name="nextHearingDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nextHearingTime">Next Hearing Time</label>
+                    <input type="time" id="nextHearingTime" name="nextHearingTime">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Case Description</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="caseFiles">Upload Documents (optional)</label>
+                    <input type="file" id="caseFiles" name="caseFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt">
+                    <small>You can select multiple files. Max 10MB per file.</small>
+                    <div id="caseFilesList" class="file-list"></div>
+                </div>
+                
+                <input type="hidden" id="caseId" name="caseId">
+                
+                <div id="caseFormError" class="error-message" role="alert"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelCaseBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Case</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notifications Dropdown -->
+    <div class="notifications-dropdown" id="notificationsDropdown">
+        <div class="dropdown-header">
+            <h3>Notifications</h3>
+        </div>
+        <div class="dropdown-content" id="notificationsList">
+            <p class="no-data">No notifications</p>
+        </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/alerts.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/cases.js"></script>
+</body>
+</html>
+

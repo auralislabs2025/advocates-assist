@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Assist - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Animated Background Particles -->
+        <div class="floating-particles">
+            <div class="particle particle-1">⚖</div>
+            <div class="particle particle-2">⚖</div>
+            <div class="particle particle-3">⚖</div>
+            <div class="particle particle-4">⚖</div>
+            <div class="particle particle-5">⚖</div>
+            <div class="particle particle-6">⚖</div>
+            <div class="particle particle-7">⚖</div>
+            <div class="particle particle-8">⚖</div>
+        </div>
+        
+        <!-- Legal Theme Decorative Elements -->
+        <div class="legal-decorations">
+            <div class="decoration-pillar decoration-pillar-left"></div>
+            <div class="decoration-pillar decoration-pillar-right"></div>
+        </div>
+        
+        <!-- Glowing Orbs for Ambiance -->
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="glow-orb glow-orb-3"></div>
+        
+        <div class="login-box">
+            <div class="login-header">
+                <div class="legal-icon-wrapper">
+                    <svg class="legal-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Scale of Justice -->
+                        <g transform="translate(50, 50)">
+                            <!-- Base -->
+                            <rect x="-3" y="30" width="6" height="15" fill="#8b7355" rx="2"/>
+                            <!-- Scale Beam -->
+                            <line x1="-25" y1="30" x2="25" y2="30" stroke="#8b7355" stroke-width="4" stroke-linecap="round"/>
+                            <!-- Left Pan -->
+                            <path d="M -30 30 Q -30 10 -20 10 Q -10 10 -10 30" stroke="#8b7355" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <circle cx="-20" cy="25" r="2" fill="#8b7355"/>
+                            <!-- Right Pan -->
+                            <path d="M 30 30 Q 30 10 20 10 Q 10 10 10 30" stroke="#8b7355" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <circle cx="20" cy="25" r="2" fill="#8b7355"/>
+                            <!-- Chains -->
+                            <line x1="-20" y1="10" x2="-25" y2="30" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="20" y1="10" x2="25" y2="30" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                </div>
+                <h1>Advocate Assist</h1>
+                <p>Case Management System for Advocates</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        autocomplete="username"
+                        aria-label="Username or Email"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        autocomplete="current-password"
+                        aria-label="Password"
+                    >
+                </div>
+                
+                <div id="loginError" class="error-message" role="alert" aria-live="polite"></div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+                
+                <div class="login-footer">
+                    <p>New user? <a href="#" id="showRegister">Register here</a></p>
+                </div>
+            </form>
+            
+            <form id="registerForm" class="login-form hidden">
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input 
+                        type="text" 
+                        id="regUsername" 
+                        name="regUsername" 
+                        required 
+                        autocomplete="username"
+                        aria-label="Username"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input 
+                        type="email" 
+                        id="regEmail" 
+                        name="regEmail" 
+                        required 
+                        autocomplete="email"
+                        aria-label="Email"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="regPassword" 
+                        name="regPassword" 
+                        required 
+                        autocomplete="new-password"
+                        aria-label="Password"
+                        minlength="6"
+                    >
+                    <small>Minimum 6 characters</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        id="regConfirmPassword" 
+                        name="regConfirmPassword" 
+                        required 
+                        autocomplete="new-password"
+                        aria-label="Confirm Password"
+                    >
+                </div>
+                
+                <div id="registerError" class="error-message" role="alert" aria-live="polite"></div>
+                <div id="registerSuccess" class="success-message" role="alert" aria-live="polite"></div>
+                
+                <button type="submit" class="btn btn-primary">Register</button>
+                
+                <div class="login-footer">
+                    <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+                </div>
+            </form>
+            
+            <div class="demo-info">
+                <p><strong>Demo User:</strong> admin / password123</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+
