@@ -1861,6 +1861,19 @@ body.sidebar-collapsed .case-detail-container {
         font-size: 1rem;
     }
     
+    /* Page Header */
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .page-header h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
     /* Toolbar */
     .toolbar {
         flex-direction: column;
@@ -1898,7 +1911,7 @@ body.sidebar-collapsed .case-detail-container {
         padding: 1rem 1.5rem;
         font-size: 0.9375rem;
         border-radius: 10px;
-        margin-top: 0.25rem;
+        margin-top: 0;
     }
     
     /* Alert Banner */
@@ -2144,6 +2157,11 @@ body.sidebar-collapsed .case-detail-container {
         margin-bottom: 1.25rem;
     }
     
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
     .form-actions {
         flex-direction: column-reverse;
         gap: 0.75rem;
@@ -2295,6 +2313,19 @@ body.sidebar-collapsed .case-detail-container {
         font-size: 0.9375rem;
     }
     
+    /* Page Header */
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+    
     /* Toolbar */
     .toolbar {
         margin-bottom: 1rem;
@@ -2310,6 +2341,8 @@ body.sidebar-collapsed .case-detail-container {
     #addCaseBtn {
         padding: 0.875rem 1.25rem;
         font-size: 0.875rem;
+        width: 100%;
+        justify-content: center;
     }
     
     /* Cases */
@@ -2764,6 +2797,12 @@ body.sidebar-collapsed .case-detail-container {
         font-size: 1.125rem;
     }
     
+    .modal-close {
+        font-size: 1.5rem;
+        width: 28px;
+        height: 28px;
+    }
+    
     .modal-content form {
         padding: 1rem;
     }
@@ -2774,6 +2813,7 @@ body.sidebar-collapsed .case-detail-container {
     
     .form-group label {
         font-size: 0.875rem;
+        margin-bottom: 0.375rem;
     }
     
     .form-group input,
@@ -2781,6 +2821,35 @@ body.sidebar-collapsed .case-detail-container {
     .form-group textarea {
         padding: 0.75rem;
         font-size: 0.9375rem;
+        border-radius: 10px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+    
+    .form-group small {
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
     }
     
     /* Timeline */
